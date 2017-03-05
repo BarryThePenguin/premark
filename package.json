@@ -1,0 +1,48 @@
+{
+  "name": "premark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-md": "remark readme.md -qfo",
+    "build": "npm run build-md",
+    "lint": "xo",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "keywords": [],
+  "repository": "https://github.com/barrythepenguin/premark",
+  "bugs": "https://github.com/barrythepenguin/premark/issues",
+  "author": "Jonathan Haines <jonno.haines@gmail.com>",
+  "contributors": [
+    "Jonathan Haines <jonno.haines@gmail.com>"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "unist-util-visit": "^1.1.1"
+  },
+  "devDependencies": {
+    "remark": "^7.0.0",
+    "remark-cli": "^3.0.0",
+    "remark-html": "^6.0.0",
+    "remark-preset-wooorm": "^2.0.0",
+    "remark-usage": "^5.0.0",
+    "tape": "^4.6.3",
+    "xo": "^0.17.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "output": true,
+    "plugins": [
+      "preset-wooorm",
+      ["remark-lint-fenced-code-flag", false],
+      "usage"
+    ]
+  }
+}
