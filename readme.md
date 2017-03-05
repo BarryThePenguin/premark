@@ -1,5 +1,7 @@
 # premark
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/BarryThePenguin/premark.svg)](https://greenkeeper.io/)
+
 Create slides with remark.
 
 ## Usage
